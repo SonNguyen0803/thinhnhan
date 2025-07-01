@@ -1,0 +1,35 @@
+<p-toast />
+<div class="bg-surface-50 dark:bg-surface-950 flex items-center justify-center min-h-screen overflow-hidden">
+    <div class="bg-login">
+        <div class="bg-logo"></div>
+    </div>
+    <div class="login-content">
+        <h1 class="d-flex justify-content-center mb-5">환영합니다! 입점 또는 권한을 설정하세요</h1>
+        <div class="d-flex flex-column mt-5">
+            <label>점주님이신가요?</label>
+            <label class="mt-2">입점 신처 후 사용하실 수 있습니다.</label>
+            <p-button styleClass="w-full bg-green-600 text-white rounded-lg px-5 py-3 mt-3 p-button-lg" (onClick)="signup()">
+                <ng-template pTemplate="content">
+                    <div class="w-full flex justify-between items-center">
+                        <span>입점 신청하기</span>
+                        <i class="pi pi-arrow-right"></i>
+                    </div>
+                </ng-template>
+            </p-button>
+        </div>
+        <div class="d-flex flex-column mt-5">
+            <label>직원이신가요?</label>
+            <label class="mt-2">점주님에게 권한설정을 요청하세요.</label>
+            <p-button styleClass="w-full bg-green-600 text-white rounded-lg px-5 py-3 mt-3 p-button-lg">
+                <ng-template pTemplate="content">
+                    <div class="w-full flex justify-between items-center">
+                        <span>권한 신청하기</span>
+                        <i class="pi pi-arrow-right"></i>
+                    </div>
+                </ng-template>
+            </p-button>
+        </div>
+
+        <label for="" class="mt-5">* 점주님이 직접 초대도 가능해요</label>
+    </div>
+</div>

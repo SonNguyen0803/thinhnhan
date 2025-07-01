@@ -1,0 +1,327 @@
+<div class="flex flex-col gap-4">
+    <p-contextMenu #cm [model]="menuItems" appendTo="body"></p-contextMenu>
+
+    <div class="flex flex-col md:flex-row gap-4">
+        <!-- information -->
+        <div class="md:w-1/2 card flex flex-col gap-4 w-full">
+            <div class="flex justify-center">
+                <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria10.jpg" alt="Image" width="150"
+                    [preview]="true" />
+            </div>
+            <div class="flex">
+                <label class="flex align-items-center">아이디</label>
+                <input pInputText type="text" class="form-control">
+                <p-button label="중복체크" styleClass="p-button-white ms-3"></p-button>
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">비밀번호</label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">비밀번호 확인</label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">휴대폰번호</label>
+                <input pInputText type="text" class="form-control">
+                <p-button label="인증요청" styleClass="p-button-white ms-3"></p-button>
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center"></label>
+                <input pInputText type="text" class="form-control">
+                <p-button label="인증확인" styleClass="p-button-white ms-3"></p-button>
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">제공 서비스</label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">미용샵 주소</label>
+                <input pInputText type="text" class="form-control">
+                <p-button label="주소검색" styleClass="p-button-white ms-3"></p-button>
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center"></label>
+                <input pInputText type="text" class="form-control" placeholder="상세주소">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">미용샵명</label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">매장대표번호</label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center">SNS 주소</label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center"></label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex">
+                <label class="flex align-items-center"></label>
+                <input pInputText type="text" class="form-control">
+            </div>
+
+            <div class="flex justify-center">
+                <p-button label="저장"></p-button>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col w-full">
+            <!-- staff -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex justify-between">
+                    <div class="font-semibold text-xl">스타일러 등록</div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <p-button label="항목추가" styleClass="p-button-white" (onClick)="addStaff()"></p-button>
+                        <p-button label="저장"></p-button>
+                    </div>
+                </div>
+                <div>
+                    <p-table [value]="staffs" dataKey="level" showGridlines [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th style="width:50%">
+                                    제공자명
+                                </th>
+                                <th style="width:50%">
+                                    보유고객
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-staff let-editing="editing">
+                            <tr (contextmenu)="onRightClick($event, staff, removeStaff)">
+                                <td [pEditableColumn]="staff.name" pEditableColumnField="name">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <input pInputText type="text" [(ngModel)]="staff.name" />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ staff.name }}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td [pEditableColumn]="staff.cnt" pEditableColumnField="cnt">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="staff.cnt" [max]="100" />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ staff.cnt }}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+
+            <!-- level -->
+            <div class="card flex flex-col gap-4">
+
+                <div class="flex justify-between">
+                    <div class="font-semibold text-xl">회원등급</div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <p-button label="항목추가" styleClass="p-button-white" (onClick)="addLevel()"></p-button>
+                        <p-button label="저장"></p-button>
+                    </div>
+                </div>
+
+                <div>
+                    <p-table [value]="levels" dataKey="level" showGridlines [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th style="width:28%">
+                                    회원등급명
+                                </th>
+                                <th style="width:18%">
+                                    횟수
+                                </th>
+                                <th style="width:18%">
+                                    금액
+                                </th>
+                                <th style="width:18%">
+                                    할인율
+                                </th>
+                                <th style="width:18%">
+                                    적립율
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-level let-editing="editing">
+                            <tr (contextmenu)="onRightClick($event, level, removeLevel)">
+                                <td [pEditableColumn]="level.level" pEditableColumnField="level">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <input pInputText type="text" [(ngModel)]="level.level" />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ level.level }}
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td [pEditableColumn]="level.numberOf" pEditableColumnField="numberOf">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="level.numberOf" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ level.numberOf }}회
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td [pEditableColumn]="level.amount" pEditableColumnField="amount">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="level.amount" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ level.amount | number}}만원
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td [pEditableColumn]="level.discount" pEditableColumnField="discount">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="level.discount" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ level.discount | number }}%
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+
+                                <td [pEditableColumn]="level.accumulation" pEditableColumnField="accumulation">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="level.accumulation" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ level.accumulation | number }}%
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+            <!-- amount rate -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex justify-between">
+                    <div class="font-semibold text-xl">정액제 금액</div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <p-button label="항목추가" styleClass="p-button-white" (onClick)="addAmount()"></p-button>
+                        <p-button label="저장"></p-button>
+                    </div>
+                </div>
+
+                <div>
+                    <p-table [value]="amounts" dataKey="level" showGridlines [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th style="width:33%">
+                                    결제금액
+                                </th>
+                                <th style="width:33%">
+                                    적립금액
+                                </th>
+                                <th style="width:33%">
+                                    사용기간
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-item let-editing="editing">
+                            <tr (contextmenu)="onRightClick($event, item, removeAmount)">
+                                <td [pEditableColumn]="item.paymentAmount" pEditableColumnField="paymentAmount">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="item.paymentAmount" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ item.paymentAmount | number }}만원
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td [pEditableColumn]="item.accumulatedAmount" pEditableColumnField="accumulatedAmount">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="item.accumulatedAmount" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            {{ item.accumulatedAmount }}만원
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                                <td [pEditableColumn]="item.period" pEditableColumnField="period">
+                                    <p-cellEditor>
+                                        <ng-template #input>
+                                            <p-inputnumber [showButtons]="true" inputId="minmaxfraction" [min]="0"
+                                                [(ngModel)]="item.period" [max]="100" required />
+                                        </ng-template>
+                                        <ng-template #output>
+                                            <ng-container *ngIf="item.period > 0; else elseBlock">
+                                                {{ item.period | number }}개월
+                                            </ng-container>
+                                        </ng-template>
+                                        <ng-template #elseBlock>
+                                            무제한
+                                        </ng-template>
+                                    </p-cellEditor>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+            <!-- limit amount -->
+            <div class="card gap-4">
+                <div class="flex gap-4">
+                    <div class="font-semibold text-xl">정액제 금액</div>
+                    <p-toggleswitch [(ngModel)]="checkedLimit" />
+                </div>
+                <div class="flex flex-col md:flex-row gap-2">
+                    <span class="flex align-items-center">누적된 적립금</span>
+                    <p-inputnumber mode="decimal" [showButtons]="true" [min]="0" />
+                    <span class="flex align-items-center">원 이하면 사용할 수 없도록 설정합니다.</span>
+                </div>
+            </div>
+
+            <!-- use point -->
+            <div class="card gap-4">
+                <div class="flex gap-4">
+                    <div class="font-semibold text-xl">예약금 사용여부</div>
+                    <p-toggleswitch [(ngModel)]="checkedUsePoint" />
+                </div>
+                <div class="flex flex-col md:flex-row gap-2">
+                    <span class="flex align-items-center">계약금액의</span>
+                    <p-inputnumber mode="decimal" [showButtons]="true" [min]="0" />
+                    <span class="flex align-items-center">원 이하면 사용할 수 없도록 설정합니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.bg-login {
+    width: 60%;
+    height: 100vh;
+    background-color: #0073C6;
+}
+
+.bg-logo {
+    background: url('../../../assets/images/logo-login.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.login-content {
+    padding: 2rem;
+    width: 40%
+}
+
+@media (max-width: 767px) {
+    .bg-login {
+        display: none;
+    }
+
+    .login-content {
+        width: 100vw;
+        padding: 1rem;
+    }
+}
