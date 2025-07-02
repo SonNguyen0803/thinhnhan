@@ -5,7 +5,7 @@
             <div *ngFor="let item of drink">
                 <p-card [style]="{ width: '100%', overflow: 'hidden' }">
                     <ng-template #header>
-                         <img alt="Card" class="w-full" [src]="'../../../assets/images/' + item.img" style="height: 280px;"/>
+                         <img alt="Card" class="w-full" [src]="'assets/images/' + item.img" style="height: 280px;"/>
                     </ng-template>
                     <ng-template #title> {{item.name}} </ng-template>
                     <ng-template #subtitle> {{item.price | number}} VNĐ </ng-template>

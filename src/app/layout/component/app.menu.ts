@@ -10,7 +10,7 @@ import { AppMenuitem } from './app.menuitem';
     imports: [CommonModule, AppMenuitem, RouterModule],
     template: `
     <a class="layout-topbar-logo" routerLink="/">
-                <img src="../../assets/images/logo.jpg">
+                <img src="assets/images/logo.jpg">
             </a>
             <ul class="layout-menu">
         <ng-container *ngFor="let item of model; let i = index">
