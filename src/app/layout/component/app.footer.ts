@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { MapComponent } from "./map/map.component";
 
 @Component({
-    standalone: true,
-    selector: 'app-footer',
-    template: `
-    <app-map/>
-    <footer class="p-4 bg-gray-100 border-t border-gray-300">
+  standalone: true,
+  selector: 'app-footer',
+  template: `
+    <div class="p-4 card gap-4 bg-gray-100 border-t border-gray-300">
+      <app-map/>
   <div class="grid md:grid-cols-3 gap-6 text-gray-700">
     <div>
       <h4 class="font-bold mb-2">Địa chỉ</h4>
-      <p>Ngõ 37 Đường Hà Huy Tập, Hà Huy Tập, Vinh, Nghệ An</p>
+      <div>Ngõ 37 Đường Hà Huy Tập, Hà Huy Tập, Vinh, Nghệ An</div>
     </div>
 
     <div>
@@ -41,7 +41,7 @@ import { MapComponent } from "./map/map.component";
     <div>&copy; 2025 Thịnh Nhàn. Gắp một miếng – Nhớ cả đời.</div>
     <div class="italic">* Tất cả hình ảnh chỉ mang tính chất minh họa</div>
   </div>
-</footer>`,
-    imports: [MapComponent]
+    </div>`,
+  imports: [MapComponent]
 })
 export class AppFooter { }
