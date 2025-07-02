@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { BeautySettingComponent } from './beauty-setting/beauty-setting.component';
-import { BusinessHoursSettingComponent } from './business-hours-setting/business-hours-setting.component';
-import { ShopSettingComponent } from './shop-setting/shop-setting.component';
+import { DogMeatComponent } from './dog-meat/dog-meat.component';
+import { DessertComponent } from './dessert/dessert.component';
+import { DrinkComponent } from './drink/drink.component';
 
 export default [
-    { path: 'dog', data: { breadcrumb: 'Beauty' }, component: BeautySettingComponent },
-    { path: 'drink', data: { breadcrumb: 'Working Hours' }, component: BusinessHoursSettingComponent },
+    { path: 'dog', data: { breadcrumb: 'Thịt chó' }, component: DogMeatComponent },
+    { path: 'dessert', data: { breadcrumb: 'Tráng miệng' }, component: DessertComponent },
+    { path: 'drink', data: { breadcrumb: 'Giải khát' }, component: DrinkComponent },
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;

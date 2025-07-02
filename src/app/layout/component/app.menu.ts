@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AppMenuitem } from './app.menuitem';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-menu',
     standalone: true,
     imports: [CommonModule, AppMenuitem, RouterModule],
-    template: `<ul class="layout-menu">
+    template: `
+    <a class="layout-topbar-logo" routerLink="/">
+                <img src="../../assets/images/logo.jpg">
+            </a>
+            <ul class="layout-menu">
         <ng-container *ngFor="let item of model; let i = index">
             <li app-menuitem *ngIf="!item.separator" [item]="item" [index]="i" [root]="true"></li>
             <li *ngIf="item.separator" class="menu-separator"></li>
@@ -18,16 +21,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppMenu {
     model: MenuItem[] = [];
+
     ngOnInit() {
         this.model = [
-            // {
-            //     label: 'Home',
-            //     items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
-            // },
             {
                 label: 'Menu',
+                routerLink: ['/'],
                 items: [
                     { label: 'Thịt chó', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/dog'] },
+                    { label: 'Tráng miệng', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/dessert'] },
                     { label: 'Giải khát', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/drink'] },
                 ]
             }

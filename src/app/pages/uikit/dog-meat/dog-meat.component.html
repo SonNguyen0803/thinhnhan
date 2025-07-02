@@ -1,0 +1,16 @@
+<div class="flex flex-col gap-8">
+    <div class="font-semibold text-xl ms-5" style="font-size: 25px;font-weight: 700;">Thịt chó</div>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+            <div *ngFor="let item of dog">
+                <p-card [style]="{ width: '100%', overflow: 'hidden' }">
+                    <ng-template #header>
+                         <img alt="Card" class="w-full" [src]="'../../../assets/images/' + item.img" style="height: 280px;"/>
+                    </ng-template>
+                    <ng-template #title> {{item.name}} </ng-template>
+                    <ng-template #subtitle> {{item.price | number}} VNĐ </ng-template>
+                </p-card>
+            </div>
+        </div>
+    </div>
+</div>
