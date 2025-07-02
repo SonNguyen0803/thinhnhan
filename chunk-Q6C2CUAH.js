@@ -1,0 +1,32 @@
+import{K as L,X as H,Y as P,Z as z,_ as y,da as A,na as G}from"./chunk-T7XI2J4Y.js";import{Cb as C,Da as i,Db as j,Jb as N,Ka as F,Oa as x,P as D,Pa as I,Q,Sa as k,V as S,Va as l,ab as M,bb as r,fa as T,fb as E,jb as u,kb as f,mb as b,nb as v,ob as _,oc as $,qc as q,rc as R,sb as g,sc as B,tb as w,ub as h,vb as p,vc as O,xb as d,yb as m}from"./chunk-R62PTSFW.js";var J=class{static dog=[{name:"H\u1EA5p",img:"luoc.jpg",price:15e4,cate:"D\u0129a"},{name:"L\xF2ng",img:"long.jpg",price:15e4,cate:"D\u0129a"},{name:"N\u1EA5u",img:"ruouman.jpg",price:15e4,cate:"D\u0129a"},{name:"N\u01B0\u1EDBng",img:"chonuong.jpg",price:15e4,cate:"D\u0129a"},{name:"S\u01B0\u1EDDn r\xE1n",img:"suonran.jpg",price:15e4,cate:"D\u0129a"},{name:"Ch\xE2n \u0111u\xF4i",img:"ruouman2.JPG",price:15e4,cate:"D\u0129a"}];static dessert=[{name:"M\xEDa h\u1EA5p g\u1EEBng",img:"miahapgung.jpg",price:1e4,cate:"D\u0129a"},{name:"Cam",img:"cam.jpg",price:1e4,cate:"D\u0129a"},{name:"B\u01B0\u1EDFi",img:"buoi.jpg",price:1e4,cate:"D\u0129a"}];static drink=[{name:"Tr\xE0 \u0111\xE1",img:"trada.jpg",price:0,cate:"Lon"},{name:"N\u01B0\u1EDBc su\u1ED1i",img:"nuocsuoi.jpg",price:0,cate:"Lon"},{name:"Bia H\xE0 N\u1ED9i",img:"biahanoi.png",price:15e3,cate:"Lon"},{name:"Cocacola",img:"coca.jpg",price:15e3,cate:"Lon"},{name:"B\xF2 h\xFAc",img:"bohuc.jpg",price:15e3,cate:"Lon"},{name:"R\u01B0\u1EE3u",img:"ruou.png",price:3e4,cate:"Chai"}];static link_mess="https://www.facebook.com/thinhnhanf";static menu=[...this.dog,...this.dessert,...this.drink]};var K=["header"],U=["title"],W=["subtitle"],X=["content"],Y=["footer"],Z=["*",[["p-header"]],[["p-footer"]]],ee=["*","p-header","p-footer"];function te(e,o){e&1&&_(0)}function ae(e,o){if(e&1&&(u(0,"div",8),h(1,1),l(2,te,1,0,"ng-container",6),f()),e&2){let t=g();i(2),r("ngTemplateOutlet",t.headerTemplate||t._headerTemplate)}}function ne(e,o){if(e&1&&(b(0),C(1),v()),e&2){let t=g(2);i(),j(t.header)}}function ie(e,o){e&1&&_(0)}function re(e,o){if(e&1&&(u(0,"div",9),l(1,ne,2,1,"ng-container",10)(2,ie,1,0,"ng-container",6),f()),e&2){let t=g();i(),r("ngIf",t.header&&!t._titleTemplate&&!t.titleTemplate),i(),r("ngTemplateOutlet",t.titleTemplate||t._titleTemplate)}}function oe(e,o){if(e&1&&(b(0),C(1),v()),e&2){let t=g(2);i(),j(t.subheader)}}function ce(e,o){e&1&&_(0)}function le(e,o){if(e&1&&(u(0,"div",11),l(1,oe,2,1,"ng-container",10)(2,ce,1,0,"ng-container",6),f()),e&2){let t=g();i(),r("ngIf",t.subheader&&!t._subtitleTemplate&&!t.subtitleTemplate),i(),r("ngTemplateOutlet",t.subtitleTemplate||t._subtitleTemplate)}}function pe(e,o){e&1&&_(0)}function de(e,o){e&1&&_(0)}function me(e,o){if(e&1&&(u(0,"div",12),h(1,2),l(2,de,1,0,"ng-container",6),f()),e&2){let t=g();i(2),r("ngTemplateOutlet",t.footerTemplate||t._footerTemplate)}}var se=({dt:e})=>`
+.p-card {
+    background: ${e("card.background")};
+    color: ${e("card.color")};
+    box-shadow: ${e("card.shadow")};
+    border-radius: ${e("card.border.radius")};
+    display: flex;
+    flex-direction: column;
+}
+
+.p-card-caption {
+    display: flex;
+    flex-direction: column;
+    gap: ${e("card.caption.gap")};
+}
+
+.p-card-body {
+    padding: ${e("card.body.padding")};
+    display: flex;
+    flex-direction: column;
+    gap: ${e("card.body.gap")};
+}
+
+.p-card-title {
+    font-size: ${e("card.title.font.size")};
+    font-weight: ${e("card.title.font.weight")};
+}
+
+.p-card-subtitle {
+    color: ${e("card.subtitle.color")};
+}
+`,ue={root:"p-card p-component",header:"p-card-header",body:"p-card-body",caption:"p-card-caption",title:"p-card-title",subtitle:"p-card-subtitle",content:"p-card-content",footer:"p-card-footer"},V=(()=>{class e extends A{name="card";theme=se;classes=ue;static \u0275fac=(()=>{let t;return function(a){return(t||(t=T(e)))(a||e)}})();static \u0275prov=D({token:e,factory:e.\u0275fac})}return e})();var fe=(()=>{class e extends G{header;subheader;set style(t){L(this._style(),t)||this._style.set(t)}styleClass;headerFacet;footerFacet;headerTemplate;titleTemplate;subtitleTemplate;contentTemplate;footerTemplate;_headerTemplate;_titleTemplate;_subtitleTemplate;_contentTemplate;_footerTemplate;_style=F(null);_componentStyle=S(V);getBlockableElement(){return this.el.nativeElement.children[0]}templates;ngAfterContentInit(){this.templates.forEach(t=>{switch(t.getType()){case"header":this._headerTemplate=t.template;break;case"title":this._titleTemplate=t.template;break;case"subtitle":this._subtitleTemplate=t.template;break;case"content":this._contentTemplate=t.template;break;case"footer":this._footerTemplate=t.template;break;default:this._contentTemplate=t.template;break}})}static \u0275fac=(()=>{let t;return function(a){return(t||(t=T(e)))(a||e)}})();static \u0275cmp=x({type:e,selectors:[["p-card"]],contentQueries:function(c,a,s){if(c&1&&(p(s,H,5),p(s,P,5),p(s,K,4),p(s,U,4),p(s,W,4),p(s,X,4),p(s,Y,4),p(s,z,4)),c&2){let n;d(n=m())&&(a.headerFacet=n.first),d(n=m())&&(a.footerFacet=n.first),d(n=m())&&(a.headerTemplate=n.first),d(n=m())&&(a.titleTemplate=n.first),d(n=m())&&(a.subtitleTemplate=n.first),d(n=m())&&(a.contentTemplate=n.first),d(n=m())&&(a.footerTemplate=n.first),d(n=m())&&(a.templates=n)}},inputs:{header:"header",subheader:"subheader",style:"style",styleClass:"styleClass"},features:[N([V]),k],ngContentSelectors:ee,decls:9,vars:10,consts:[[3,"ngClass","ngStyle"],["class","p-card-header",4,"ngIf"],[1,"p-card-body"],["class","p-card-title",4,"ngIf"],["class","p-card-subtitle",4,"ngIf"],[1,"p-card-content"],[4,"ngTemplateOutlet"],["class","p-card-footer",4,"ngIf"],[1,"p-card-header"],[1,"p-card-title"],[4,"ngIf"],[1,"p-card-subtitle"],[1,"p-card-footer"]],template:function(c,a){c&1&&(w(Z),u(0,"div",0),l(1,ae,3,1,"div",1),u(2,"div",2),l(3,re,3,2,"div",3)(4,le,3,2,"div",4),u(5,"div",5),h(6),l(7,pe,1,0,"ng-container",6),f(),l(8,me,3,1,"div",7),f()()),c&2&&(E(a.styleClass),r("ngClass","p-card p-component")("ngStyle",a._style()),M("data-pc-name","card"),i(),r("ngIf",a.headerFacet||a.headerTemplate||a._headerTemplate),i(2),r("ngIf",a.header||a.titleTemplate||a._titleTemplate),i(),r("ngIf",a.subheader||a.subtitleTemplate||a._subtitleTemplate),i(3),r("ngTemplateOutlet",a.contentTemplate||a._contentTemplate),i(),r("ngIf",a.footerFacet||a.footerTemplate||a._footerTemplate))},dependencies:[O,$,q,B,R,y],encapsulation:2,changeDetection:0})}return e})(),Ee=(()=>{class e{static \u0275fac=function(c){return new(c||e)};static \u0275mod=I({type:e});static \u0275inj=Q({imports:[fe,y,y]})}return e})();export{J as a,fe as b,Ee as c};
