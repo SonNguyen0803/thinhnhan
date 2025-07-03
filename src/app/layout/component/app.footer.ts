@@ -22,17 +22,20 @@ import { MapComponent } from "./map/map.component";
     <div>
       <h4 class="font-bold mb-2">Theo dõi chúng tôi</h4>
       <div class="flex space-x-4">
+        <a href="https://m.me/thinhnhanf" target="_blank" class="icon fb">
+        <i class="fab fa-facebook-messenger"></i>
+    </a>
+    
        <a href="https://www.facebook.com/thinhnhanf" target="_blank" class="icon fb">
         <i class="pi pi-facebook"></i>
+        </a>
+        <a href="tel:0971659971" class="icon phone">
+            <i class="pi pi-phone"></i>
         </a>
             <a href="https://maps.app.goo.gl/Wosx9e5ngZ6xUmHj9"
             target="_blank" class="icon map">
             <i class="pi pi-map-marker"></i>
         </a>
-            <a href="tel:0971659971" class="icon phone">
-            <i class="pi pi-phone"></i>
-        </a>
-
       </div>
     </div>
   </div>

@@ -28,6 +28,7 @@ export class AppMenu {
                 label: 'Menu',
                 routerLink: ['/'],
                 items: [
+                    { label: 'Tất cả', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/all'] },
                     { label: 'Thịt chó', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/dog'] },
                     { label: 'Tráng miệng', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/dessert'] },
                     { label: 'Giải khát', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/drink'] },
